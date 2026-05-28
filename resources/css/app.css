@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== NEUBRUTALISM DESIGN SYSTEM - TECHCOMMERS ===== */
+
+@layer base {
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Space Grotesk', sans-serif;
+        background-color: #99C2FF;
+        color: #0D0D0D;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 800;
+        letter-spacing: -0.02em;
+    }
+}
+
+@layer components {
+
+    /* ===== BUTTONS ===== */
+    .btn-neu {
+        @apply inline-flex items-center justify-center gap-2 px-5 py-3 font-bold text-sm uppercase tracking-wider border-3 border-neu-black bg-neu-yellow text-neu-black;
+        box-shadow: 4px 4px 0px 0px #0D0D0D;
+        transition: transform 0.1s ease, box-shadow 0.1s ease;
+        cursor: pointer;
+    }
+    .btn-neu:hover {
+        transform: translate(-1px, -1px);
+        box-shadow: 5px 5px 0px 0px #0D0D0D;
+    }
+    .btn-neu:active {
+        transform: translate(2px, 2px);
+        box-shadow: 2px 2px 0px 0px #0D0D0D;
+    }
+
+    .btn-neu-primary {
+        @apply btn-neu bg-neu-blue text-white;
+    }
+    .btn-neu-danger {
+        @apply btn-neu bg-neu-red text-white;
+    }
+    .btn-neu-success {
+        @apply btn-neu bg-neu-green text-neu-black;
+    }
+    .btn-neu-orange {
+        @apply btn-neu bg-primary text-white;
+        box-shadow: 4px 4px 0px 0px #0D0D0D;
+    }
+    .btn-neu-outline {
+        @apply btn-neu bg-transparent text-neu-black;
+    }
+    .btn-neu-white {
+        @apply btn-neu bg-white text-neu-black;
+    }
+    .btn-neu-sm {
+        @apply px-3 py-2 text-xs;
+        box-shadow: 3px 3px 0px 0px #0D0D0D;
+    }
+
+    /* ===== CARDS ===== */
+    .card-neu {
+        @apply bg-white border-3 border-neu-black p-5;
+        box-shadow: 4px 4px 0px 0px #0D0D0D;
+    }
+    .card-neu-yellow {
+        @apply card-neu bg-neu-yellow;
+    }
+    .card-neu-blue {
+        @apply card-neu bg-neu-blue text-white;
+    }
+    .card-neu-pink {
+        @apply card-neu bg-neu-pink text-white;
+    }
+
+    /* ===== INPUTS ===== */
+    .input-neu {
+        @apply w-full px-4 py-3 border-3 border-neu-black bg-white font-medium text-neu-black placeholder-gray-400;
+        box-shadow: 3px 3px 0px 0px #0D0D0D;
+        outline: none;
+        transition: box-shadow 0.1s ease, transform 0.1s ease;
+        border-radius: 0;
+    }
+    .input-neu:focus {
+        box-shadow: 4px 4px 0px 0px #0047FF;
+        border-color: #0047FF;
+        transform: translate(-1px, -1px);
+    }
+
+    /* ===== BADGES ===== */
+    .badge-neu {
+        @apply inline-block px-2 py-0.5 text-xs font-bold uppercase border-2 border-neu-black;
+    }
+    .badge-yellow  { @apply badge-neu bg-neu-yellow text-neu-black; }
+    .badge-blue    { @apply badge-neu bg-neu-blue text-white; }
+    .badge-red     { @apply badge-neu bg-neu-red text-white; }
+    .badge-green   { @apply badge-neu bg-neu-green text-neu-black; }
+    .badge-pink    { @apply badge-neu bg-neu-pink text-white; }
+    .badge-orange  { @apply badge-neu bg-primary text-white; }
+    .badge-white   { @apply badge-neu bg-white text-neu-black; }
+
+    /* ===== TABLE ===== */
+    .table-neu {
+        @apply w-full border-3 border-neu-black text-sm;
+    }
+    .table-neu thead {
+        @apply bg-neu-black text-white;
+    }
+    .table-neu thead th {
+        @apply px-4 py-3 text-left font-bold uppercase text-xs tracking-wider;
+    }
+    .table-neu tbody tr {
+        @apply border-b-3 border-neu-black;
+        transition: background 0.1s ease;
+    }
+    .table-neu tbody tr:hover {
+        @apply bg-neu-yellow/20;
+    }
+    .table-neu tbody td {
+        @apply px-4 py-3;
+    }
+    .table-neu tbody tr:last-child {
+        border-bottom: none;
+    }
+
+    /* ===== ALERTS / TOASTS ===== */
+    .alert-neu {
+        @apply flex items-start gap-3 p-4 border-3 border-neu-black font-medium;
+        box-shadow: 3px 3px 0px 0px #0D0D0D;
+    }
+    .alert-success { @apply alert-neu bg-neu-green text-neu-black; }
+    .alert-error   { @apply alert-neu bg-neu-red text-white; }
+    .alert-warning { @apply alert-neu bg-neu-yellow text-neu-black; }
+    .alert-info    { @apply alert-neu bg-neu-blue text-white; }
+
+    /* ===== STAT CARDS ===== */
+    .stat-card-neu {
+        @apply card-neu flex flex-col gap-2;
+    }
+    .stat-card-neu .stat-label {
+        @apply text-xs font-bold uppercase tracking-widest text-gray-500;
+    }
+    .stat-card-neu .stat-value {
+        @apply text-3xl font-extrabold text-neu-black;
+    }
+
+    /* ===== SIDEBAR LINK ===== */
+    .sidebar-link {
+        @apply flex items-center gap-3 px-4 py-3 font-bold text-sm border-3 border-transparent text-neu-black transition-all;
+    }
+    .sidebar-link:hover {
+        @apply border-neu-black bg-neu-yellow;
+        box-shadow: 3px 3px 0px 0px #0D0D0D;
+        transform: translate(-1px, -1px);
+    }
+    .sidebar-link.active {
+        @apply bg-neu-black text-white border-neu-black;
+        box-shadow: 3px 3px 0px 0px #FFE600;
+    }
+
+    /* ===== PAGE HEADER ===== */
+    .page-header-neu {
+        @apply flex items-center justify-between mb-8 pb-5 border-b-3 border-neu-black;
+    }
+    .page-title-neu {
+        @apply text-3xl font-extrabold tracking-tight text-neu-black uppercase;
+    }
+
+    /* ===== SECTION LABEL ===== */
+    .section-label {
+        @apply text-xs font-black uppercase tracking-[0.2em] text-gray-400 px-4 py-2 mb-1;
+    }
+
+    /* ===== NEU DIVIDER ===== */
+    .divider-neu {
+        @apply border-t-3 border-neu-black my-4;
+    }
+
+    /* ===== MODAL ===== */
+    .modal-neu {
+        @apply bg-white border-3 border-neu-black p-6;
+        box-shadow: 8px 8px 0px 0px #0D0D0D;
+    }
+
+    /* ===== PRODUCT CARD ===== */
+    .product-card-neu {
+        @apply bg-white border-3 border-neu-black overflow-hidden;
+        box-shadow: 4px 4px 0px 0px #0D0D0D;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .product-card-neu:hover {
+        transform: translate(-3px, -3px);
+        box-shadow: 7px 7px 0px 0px #0D0D0D;
+    }
+}
+
+@layer utilities {
+    .border-3 {
+        border-width: 3px;
+    }
+    .border-b-3 {
+        border-bottom-width: 3px;
+    }
+    .border-t-3 {
+        border-top-width: 3px;
+    }
+    .border-l-3 {
+        border-left-width: 3px;
+    }
+    .border-r-3 {
+        border-right-width: 3px;
+    }
+    .text-stroke {
+        -webkit-text-stroke: 2px #0D0D0D;
+    }
+}
+
+/* ===== SWEETALERT NEUBRUTALISM OVERRIDE ===== */
+.swal2-popup {
+    border: 3px solid #0D0D0D !important;
+    box-shadow: 6px 6px 0px 0px #0D0D0D !important;
+    border-radius: 0 !important;
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-weight: 600 !important;
+}
+.swal2-confirm {
+    border: 3px solid #0D0D0D !important;
+    box-shadow: 3px 3px 0px 0px #0D0D0D !important;
+    border-radius: 0 !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    background-color: #0047FF !important;
+    transition: transform 0.1s, box-shadow 0.1s !important;
+}
+.swal2-confirm:hover {
+    transform: translate(-1px, -1px) !important;
+    box-shadow: 4px 4px 0px 0px #0D0D0D !important;
+}
+.swal2-cancel {
+    border: 3px solid #0D0D0D !important;
+    box-shadow: 3px 3px 0px 0px #0D0D0D !important;
+    border-radius: 0 !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    background-color: #FAFAFA !important;
+    color: #0D0D0D !important;
+}
+.swal2-title {
+    font-weight: 800 !important;
+    font-family: 'Space Grotesk', sans-serif !important;
+}
+
+/* ===== PAGINATION NEUBRUTALISM ===== */
+nav[role="navigation"] .flex.items-center {
+    gap: 4px;
+}
+nav[role="navigation"] a,
+nav[role="navigation"] span {
+    border: 3px solid #0D0D0D !important;
+    font-weight: 700 !important;
+    font-family: 'Space Grotesk', sans-serif !important;
+    border-radius: 0 !important;
+    box-shadow: 2px 2px 0px #0D0D0D !important;
+    transition: transform 0.1s, box-shadow 0.1s;
+    padding: 6px 12px !important;
+}
+nav[role="navigation"] a:hover {
+    background-color: #FFE600 !important;
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0px #0D0D0D !important;
+}
+nav[role="navigation"] span[aria-current="page"] {
+    background-color: #0D0D0D !important;
+    color: #FFE600 !important;
+    box-shadow: 2px 2px 0px #FFE600 !important;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #F5F0E8; border-left: 2px solid #0D0D0D; }
+::-webkit-scrollbar-thumb { background: #0D0D0D; border: 2px solid #F5F0E8; }
+::-webkit-scrollbar-thumb:hover { background: #0047FF; }
