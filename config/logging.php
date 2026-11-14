@@ -1,5 +1,6 @@
 <?php
 
+use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
@@ -98,7 +99,8 @@ return [
             'driver' => 'monolog',
             'level' => env('LOG_LEVEL', 'debug'),
             'handler' => StreamHandler::class,
-            'formatter' => env('LOG_STDERR_FORMATTER'),
+            // Keep exception details on one line so Vercel does not truncate them behind a stack trace.
+            'formatter' => env('LOG_STDERR_FORMATTER', LineFormatter::class),
             'with' => [
                 'stream' => 'php://stderr',
             ],
