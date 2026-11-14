@@ -2,6 +2,23 @@
 
 use Illuminate\Support\Str;
 
+$mysqlHost = parse_url((string) env('DB_URL', ''), PHP_URL_HOST) ?: (string) env('DB_HOST', '');
+$mysqlSslCa = env('MYSQL_ATTR_SSL_CA');
+
+// TiDB public endpoints require TLS. Bundle the CA store so it works on Vercel and Windows.
+if (!$mysqlSslCa && str_ends_with(strtolower($mysqlHost), '.tidbcloud.com')) {
+    $mysqlSslCa = resource_path('certs/cacert.pem');
+}
+
+$mysqlSslOptions = [];
+
+if (extension_loaded('pdo_mysql') && $mysqlSslCa) {
+    $mysqlSslOptions = [
+        (PHP_VERSION_ID >= 80400 ? \Pdo\Mysql::ATTR_SSL_CA : PDO::MYSQL_ATTR_SSL_CA) => $mysqlSslCa,
+        (PHP_VERSION_ID >= 80400 ? \Pdo\Mysql::ATTR_SSL_VERIFY_SERVER_CERT : PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT) => true,
+    ];
+}
+
 return [
 
     /*
@@ -57,9 +74,7 @@ return [
             'prefix_indexes' => true,
             'strict' => true,
             'engine' => null,
-            'options' => extension_loaded('pdo_mysql') ? array_filter([
-                (PHP_VERSION_ID >= 80400 ? \Pdo\Mysql::ATTR_SSL_CA : PDO::MYSQL_ATTR_SSL_CA) => env('MYSQL_ATTR_SSL_CA'),
-            ]) : [],
+            'options' => $mysqlSslOptions,
         ],
 
         'mariadb' => [
@@ -77,9 +92,7 @@ return [
             'prefix_indexes' => true,
             'strict' => true,
             'engine' => null,
-            'options' => extension_loaded('pdo_mysql') ? array_filter([
-                (PHP_VERSION_ID >= 80400 ? \Pdo\Mysql::ATTR_SSL_CA : PDO::MYSQL_ATTR_SSL_CA) => env('MYSQL_ATTR_SSL_CA'),
-            ]) : [],
+            'options' => $mysqlSslOptions,
         ],
 
         'pgsql' => [
