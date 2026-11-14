@@ -104,7 +104,7 @@
         <div class="card-neu bg-white">
             <h3 class="font-black text-lg text-neu-black uppercase mb-4 border-b-3 border-neu-black pb-3">Info Pembeli</h3>
             <div class="flex items-center gap-3 mb-5 pb-5 border-b-3 border-dashed border-gray-300">
-                <img src="{{ $order->buyer->avatar_url }}" class="w-12 h-12 rounded-full border-3 border-neu-black shrink-0">
+                <img data-image-type="avatar" src="{{ $order->buyer->avatar_url }}" class="w-12 h-12 rounded-full border-3 border-neu-black shrink-0">
                 <div class="min-w-0">
                     <div class="font-black uppercase text-neu-black truncate">{{ $order->buyer->name }}</div>
                     <div class="text-xs font-bold text-gray-500 truncate">{{ $order->buyer->email }}</div>

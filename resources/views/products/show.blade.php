@@ -177,7 +177,7 @@
                     <div class="p-5 border-3 border-neu-black bg-neu-bg" style="box-shadow: 4px 4px 0 #0D0D0D">
                         <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
                             <div class="flex items-center gap-3">
-                                <img src="{{ $review->buyer->avatar_url }}" class="w-12 h-12 rounded-full border-2 border-neu-black bg-white">
+                                <img data-image-type="avatar" src="{{ $review->buyer->avatar_url }}" class="w-12 h-12 rounded-full border-2 border-neu-black bg-white">
                                 <div>
                                     <div class="text-sm font-black">{{ $review->buyer->name }}</div>
                                     <div class="flex gap-0.5 mt-1 text-neu-yellow drop-shadow-[1px_1px_0_#0D0D0D]">
@@ -207,7 +207,7 @@
         <div class="lg:col-span-1">
             <div class="card-neu sticky top-28 bg-white">
                 <div class="flex items-center gap-4 mb-5 pb-5 border-b-3 border-neu-black">
-                    <img src="{{ $product->store->logo_url }}" alt="{{ $product->store->name }}" 
+                    <img data-image-type="store" src="{{ $product->store->logo_url }}" alt="{{ $product->store->name }}"
                          class="w-16 h-16 rounded-full border-3 border-neu-black bg-neu-bg shrink-0">
                     <div>
                         <h4 class="font-black text-lg uppercase line-clamp-2 leading-tight">{{ $product->store->name }}</h4>

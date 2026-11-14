@@ -102,18 +102,12 @@ class Store extends Model
 
     public function getLogoUrlAttribute(): string
     {
-        if ($this->logo) {
-            return asset('storage/' . $this->logo);
-        }
-        return 'https://ui-avatars.com/api/?name=' . urlencode($this->name) . '&background=EE4D2D&color=fff&size=128';
+        return imageUrl($this->logo, 'store');
     }
 
     public function getBannerUrlAttribute(): string
     {
-        if ($this->banner) {
-            return asset('storage/' . $this->banner);
-        }
-        return 'https://placehold.co/1200x300/EE4D2D/white?text=' . urlencode($this->name);
+        return imageUrl($this->banner, 'banner');
     }
 
     public function getAverageRatingAttribute(): float

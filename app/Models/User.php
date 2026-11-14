@@ -105,9 +105,6 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function getAvatarUrlAttribute(): string
     {
-        if ($this->avatar) {
-            return asset('storage/' . $this->avatar);
-        }
-        return 'https://ui-avatars.com/api/?name=' . urlencode($this->name) . '&background=EE4D2D&color=fff';
+        return imageUrl($this->avatar, 'avatar');
     }
 }

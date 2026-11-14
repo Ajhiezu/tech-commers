@@ -1,4 +1,5 @@
 import './bootstrap';
+import './image-fallback';
 
 import Alpine from 'alpinejs';
 

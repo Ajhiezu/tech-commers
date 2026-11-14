@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Gambar contoh produk">
+  <path fill="#99C2FF" d="M0 0h400v400H0z"/>
+  <circle cx="314" cy="78" r="36" fill="#FFE600" stroke="#0D0D0D" stroke-width="4"/>
+  <path d="m59 90 25 25m0-25-25 25M305 303h30m-15-15v30" stroke="#0D0D0D" stroke-width="5"/>
+  <path d="m98 159 108-53 108 53v128l-108 55-108-55z" fill="#0D0D0D"/>
+  <g stroke="#0D0D0D" stroke-width="5" stroke-linejoin="round">
+    <path d="m90 150 108-53 108 53-108 54z" fill="#FFE600"/>
+    <path d="m90 150 108 54v128L90 278z" fill="#FAFAFA"/>
+    <path d="m198 204 108-54v128l-108 54z" fill="#0047FF"/>
+    <path d="m144 124 108 54v40l-30 15v-40l-108-54z" fill="#FF3F80"/>
+    <path d="m112 255 48 24"/>
+  </g>
+</svg>

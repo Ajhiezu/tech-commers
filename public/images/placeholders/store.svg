@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Logo toko contoh">
+  <path fill="#FF3F80" d="M0 0h200v200H0z"/>
+  <path fill="#0D0D0D" d="M41 80h128v90H41z"/>
+  <g stroke="#0D0D0D" stroke-width="4" stroke-linejoin="round">
+    <path fill="#FAFAFA" d="M35 74h128v90H35z"/>
+    <path fill="#FFE600" d="M45 43h108l18 43H27z"/>
+    <path d="M70 43 62 86m37-43v43m29-43 8 43"/>
+    <path fill="#0047FF" d="M48 108h43v34H48zM111 108h36v56h-36z"/>
+  </g>
+</svg>

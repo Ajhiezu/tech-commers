@@ -129,12 +129,12 @@ class Product extends Model
     {
         $primary = $this->primaryImage;
         if ($primary) {
-            return asset('storage/' . $primary->image_path);
+            return $primary->url;
         }
         if ($this->images->count()) {
-            return asset('storage/' . $this->images->first()->image_path);
+            return $this->images->first()->url;
         }
-        return 'https://placehold.co/400x400/f5f5f5/aaa?text=No+Image';
+        return imageUrl(null);
     }
 
     public function getDiscountPercentageAttribute(): int

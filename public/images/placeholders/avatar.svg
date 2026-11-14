@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Avatar pengguna">
+  <path fill="#FFE600" d="M0 0h200v200H0z"/>
+  <circle cx="104" cy="79" r="34" fill="#0D0D0D"/>
+  <path d="M38 200v-29a66 60 0 0 1 132 0v29" fill="#0D0D0D"/>
+  <circle cx="98" cy="73" r="33" fill="#FAFAFA" stroke="#0D0D0D" stroke-width="4"/>
+  <path d="M32 200v-30a66 60 0 0 1 132 0v30" fill="#0047FF" stroke="#0D0D0D" stroke-width="4"/>
+</svg>

@@ -10,7 +10,7 @@
             {{-- Main Banner --}}
             <div class="md:col-span-2 relative border-3 border-neu-black overflow-hidden"
                  style="box-shadow: 6px 6px 0 #0D0D0D; min-height: 320px;">
-                <img src="https://placehold.co/900x420/FF2D2D/FAFAFA?text=PROMO+GEDE+BANGET"
+                <img data-image-type="banner" src="{{ asset('images/placeholders/banner.svg') }}"
                      alt="Banner Utama"
                      class="w-full h-full object-cover absolute inset-0">
                 {{-- Overlay --}}
@@ -31,7 +31,7 @@
             <div class="hidden md:flex flex-col gap-4">
                 <div class="relative border-3 border-neu-black overflow-hidden flex-1"
                      style="box-shadow: 4px 4px 0 #0D0D0D; min-height: 150px;">
-                    <img src="https://placehold.co/400x200/0047FF/FAFAFA?text=GRATIS+ONGKIR"
+                    <img data-image-type="banner" src="{{ asset('images/placeholders/banner.svg') }}"
                          class="w-full h-full object-cover absolute inset-0">
                     <div class="absolute inset-0 bg-neu-blue/70 flex items-end p-4">
                         <div class="font-black text-white text-lg uppercase">Gratis Ongkir<br>Min. 0 Rupiah</div>
@@ -39,7 +39,7 @@
                 </div>
                 <div class="relative border-3 border-neu-black overflow-hidden flex-1"
                      style="box-shadow: 4px 4px 0 #0D0D0D; min-height: 150px;">
-                    <img src="https://placehold.co/400x200/00C853/0D0D0D?text=CASHBACK+50%"
+                    <img data-image-type="banner" src="{{ asset('images/placeholders/banner.svg') }}"
                          class="w-full h-full object-cover absolute inset-0">
                     <div class="absolute inset-0 bg-neu-green/70 flex items-end p-4">
                         <div class="font-black text-neu-black text-lg uppercase">Cashback<br>Hingga 50%</div>

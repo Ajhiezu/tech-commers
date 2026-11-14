@@ -1,5 +1,22 @@
 <?php
 
+if (!function_exists('imageUrl')) {
+    function imageUrl(?string $path, string $placeholder = 'product'): string
+    {
+        if (filled($path)) {
+            if (filter_var($path, FILTER_VALIDATE_URL) && in_array(parse_url($path, PHP_URL_SCHEME), ['http', 'https'], true)) {
+                return $path;
+            }
+
+            if (\Illuminate\Support\Facades\Storage::disk('public')->exists($path)) {
+                return asset('storage/' . $path);
+            }
+        }
+
+        return asset('images/placeholders/' . $placeholder . '.svg');
+    }
+}
+
 if (!function_exists('formatRupiah')) {
     function formatRupiah(float|int $amount, bool $symbol = true): string
     {

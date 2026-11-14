@@ -12,7 +12,7 @@
                  style="box-shadow: 5px 5px 0 #FFE600">
                 {{-- User Info --}}
                 <div class="flex items-center gap-3 mb-5 pb-5 border-b-3 border-gray-700">
-                    <img src="{{ auth()->user()->avatar_url }}" alt="Avatar"
+                    <img data-image-type="avatar" src="{{ auth()->user()->avatar_url }}" alt="Avatar"
                          class="w-14 h-14 border-3 border-neu-yellow shrink-0">
                     <div class="min-w-0">
                         <h3 class="font-black text-white truncate">{{ auth()->user()->name }}</h3>

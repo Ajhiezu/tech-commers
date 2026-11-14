@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    @include('partials.image-fallback')
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -44,7 +45,7 @@
                     <button @click="open = !open"
                         class="flex items-center gap-2 px-4 py-2 bg-white border-3 border-neu-black font-bold text-neu-black hover:bg-neu-yellow transition-colors"
                         style="box-shadow: 3px 3px 0 #0D0D0D">
-                        <img src="{{ auth()->user()->store->logo_url ?? auth()->user()->avatar_url }}"
+                        <img data-image-type="store" src="{{ auth()->user()->store->logo_url ?? auth()->user()->avatar_url }}"
                              alt="Avatar" class="w-6 h-6 rounded-full border-2 border-neu-black">
                         <span class="text-sm max-w-[120px] truncate">{{ auth()->user()->store->name }}</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
